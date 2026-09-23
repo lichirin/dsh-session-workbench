@@ -1,0 +1,67 @@
+{
+  "name": "dsh-session-workbench",
+  "version": "1.0.3-dsh0.1.7.1",
+  "description": "Session Workbench for DeepSeek Harness: session-library full-text search + recall + conversation-view management. 会话工作台：会话库（全文搜索历史会话，一键以 @引用 召回给 AI）+ 会话视图（管理会话标签栏 显示/隐藏 + 排序）（session search / recall / view management / 会话视图）.",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "docs",
+    "README.md",
+    "PRIVACY.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-sidebar-right",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/schemastery": ">=3.18.1-rc.1 <4",
+    "@deepseek-ai/dsh-settings": ">=0.1.7-rc.1 <0.1.8",
+    "@deepseek-ai/dsh-session-query": ">=0.1.7-rc.1 <0.1.8"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "session-search",
+    "knowledge-base",
+    "recall",
+    "view-management",
+    "conversation-view",
+    "tab-management",
+    "会话",
+    "检索",
+    "召回",
+    "知识库",
+    "会话视图",
+    "标签栏",
+    "视图管理"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PolinniZhong/dsh-session-workbench.git"
+  },
+  "homepage": "https://github.com/PolinniZhong/dsh-session-workbench",
+  "bugs": {
+    "url": "https://github.com/PolinniZhong/dsh-session-workbench/issues"
+  },
+  "license": "MIT"
+}
